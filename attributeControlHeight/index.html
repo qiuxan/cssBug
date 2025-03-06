@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider with Tabs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .tab {
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background: #f1f1f1;
+      }
+      .tab.active {
+        background: #ddd;
+      }
+      .slider-container {
+        width: 1200px;
+        overflow: hidden;
+        position: relative;
+      }
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .slide {
+        background: wheat;
+        flex: 0 0 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+      }
+
+      .slide > *:first-child {
+        width: 33%;
+      }
+      .slide > *:last-child {
+        width: 66%;
+      }
+
+      .slide .text {
+        flex: 1;
+        padding-right: 20px;
+      }
+      .slide img {
+        flex: 1;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tab active" onclick="changeTab(0)">Tab 1</div>
+      <div class="tab" onclick="changeTab(1)">Tab 2</div>
+      <div class="tab" onclick="changeTab(2)">Tab 3</div>
+    </div>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide">
+          <div class="text">
+            <h2>Tab 1 Title</h2>
+            <p>Description for Tab 1 content.</p>
+          </div>
+          <div>
+            <img
+            alt=""
+            title=""
+            draggable="false"
+            class="pagebuilder-mobile-hidden"
+            data-element="desktop_image"
+            data-pb-style="OOVIOK8"
+            loading="lazy"
+            width="400"
+            height="400"
+            decoding="async"
+            data-nimg="1"
+            sizes="100vw"
+           
+            src="http://en.people.cn/NMediaFile/2025/0306/FOREIGN1741248337740YFLE3DG9BP.jpg"
+            style="color: transparent; width: 100%"
+          />
+          </div>
+          
+        </div>
+        <div class="slide">
+          <div class="text">
+            <h2>Tab 2 Title</h2>
+            <p>Description for Tab 2 content.</p>
+          </div>
+          <div>
+            <img
+            alt=""
+            title=""
+            draggable="false"
+            class="pagebuilder-mobile-hidden"
+            data-element="desktop_image"
+            data-pb-style="LCJGHQJ"
+            loading="lazy"
+            width="400"
+            height="400"
+            decoding="async"
+            data-nimg="1"
+            sizes="100vw"
+            
+            src="http://en.people.cn/NMediaFile/2025/0306/FOREIGN1741248671986B23GZ8F36L.jpg"
+            style="color: transparent; width: 100%"
+          />
+          </div>
+          
+        </div>
+        <div class="slide">
+          <div class="text">
+            <h2>Tab 3 Title</h2>
+            <p>Description for Tab 3 content.</p>
+          </div>
+          <div>
+            <img
+            alt=""
+            title=""
+            draggable="false"
+            class="pagebuilder-mobile-hidden"
+            data-element="desktop_image"
+            data-pb-style="JN3VTA7"
+            loading="lazy"
+            width="400"
+            height="400"
+            decoding="async"
+            data-nimg="1"
+            sizes="100vw"
+      
+            src="http://en.people.cn/NMediaFile/2025/0306/FOREIGN17412486840638LEGTF1545.jpg"
+            style="color: transparent; width: 100%"
+          />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function changeTab(index) {
+        document.querySelectorAll(".tab").forEach((tab, i) => {
+          tab.classList.toggle("active", i === index);
+        });
+        document.querySelector(".slider").style.transform = `translateX(-${
+          index * 103
+        }%)`;
+      }
+    </script>
+  </body>
+</html>
